@@ -22,14 +22,38 @@ Answer the following questions:
 
 > a specific user only need 20 percent of the time to transmit, so 1/5; denoted p = 1/5, and the remaining users are not transmitting, which is (1 - p)^(N - 1), so the final answer is p * (1- p)^(N - 1);
 
-4. What is the probability that one user (any one among the 9 users) is transmitting, and the remaining users are not transmitting? When one user is transmitting, what fraction of the link capacity will be used by this user?
+$$
+
+ans = p \ * \ (1 - p)^{(N - 1)}
+
+$$
+
+1. What is the probability that one user (any one among the 9 users) is transmitting, and the remaining users are not transmitting? When one user is transmitting, what fraction of the link capacity will be used by this user?
 
 > one user is transmitting and the other not -> p(1 - p)^(N - 1); any of them, so for one user, he can choose transmit or not transmit, this is a binomial distribution question: X is the random variable, so P(X = 1) = N!/(1 * !(N-1)) = N, so the final answer is P(X = 1) * p(1 - p)^(N - 1);
 
-5. What is the probability that any 5 users (of the total 9 users) are transmitting and the remaining users are not transmitting? (Hint: you will need to use the binomial distribution [1, 2]).
+$$
+
+ans = P(X = 1) * p \ * \ (1 - p)^{(N - 1)}
+
+$$
+
+1. What is the probability that any 5 users (of the total 9 users) are transmitting and the remaining users are not transmitting? (Hint: you will need to use the binomial distribution [1, 2]).
 
 > as the last one but P(X = 5) * p^5 * (1 - p)^(N - 5)
 
-6. What is the probability that more than 5 users are transmitting? Comment on what this implies about the number of users supportable under circuit switching and packet switching.
+$$
+
+ans = P(X = 5) * p^{5} \ * \ (1 - p)^{(N - 5)}
+
+$$
+
+1. What is the probability that more than 5 users are transmitting? Comment on what this implies about the number of users supportable under circuit switching and packet switching.
 
 > P(X = i) * p^i * (1 - p)^(N - i) sum for i from 6 to 9
+
+$$
+
+ans = \sum P(X = i) * p^{i} \ * \ (1 - p)^{(N - i)}
+
+$$
