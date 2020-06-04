@@ -110,7 +110,7 @@ but each user transmits only 10 percent of the time.*
 
  ## -
 
-1. *Suppose there is exactly one packet switch between a sending host and the receiving host.
+5. *Suppose there is exactly one packet switch between a sending host and the receiving host.
 Assume that the transmission speed of the links between the sending host and the switch and the
 switch and the receiving host are R1 and R2 respectively. Assuming that the switch uses store-andforward packet switching, what is the total end-to-end delay to send a packet of length L? Ignore
 queuing, propagation and processing delays.*
