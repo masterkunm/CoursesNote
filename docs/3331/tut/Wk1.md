@@ -138,13 +138,15 @@ to explain transmission and propagation delays. If you want to use the car­cara
 determine the location of the bits, you will need to make an additional assumption that the cars are
 stretchable. I will let you think about it.*
 
-    ***
+## -
 
-1. *Consider sending a large file of F bits from Host A to Host B. There are two links (and one
+7. *Consider sending a large file of F bits from Host A to Host B. There are two links (and one
 router) between A and B, and the links are uncongested (that is, no queuing delays). Host A
 segments the file into segments of S bits each and adds 40 bits of header to each segment, forming
 packets of L= 40 +S bits. Each link has a transmission rate of R bps. Find the value of S that
 minimizes the delay of moving the file from Host to Host B. Disregard propagation delay.*
+
+## 
 
 ```diff
 ! orange this is orange
