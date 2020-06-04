@@ -6,9 +6,9 @@
 
 ### Arvo
 
--[x] COMP3331 network week1 homework
+- [x] COMP3331 network week1 homework
 
 ### Night
 
--[] COMP3121 algorithm week1 homework till question10
--[] COMP3121 check on asst1
+- [] COMP3121 algorithm week1 homework till question10
+- [] COMP3121 check on asst1
