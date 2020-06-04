@@ -6,7 +6,7 @@
 
 ### Arvo
 
-- [ ] COMP3331 network week1 homework
+- [x] COMP3331 network week1 homework (3 questions left)
 
 ### Night
 
