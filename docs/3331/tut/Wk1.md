@@ -146,7 +146,9 @@ segments the file into segments of S bits each and adds 40 bits of header to eac
 packets of L= 40 +S bits. Each link has a transmission rate of R bps. Find the value of S that
 minimizes the delay of moving the file from Host to Host B. Disregard propagation delay.*
 
-> <font color=blue> this is markdown color </font>
+```diff
++ green omg 
+```
 
 ~~ThinkingYet~~
 
