@@ -9,21 +9,17 @@ birthday on the first day of the class? (Assume there are exactly 365 days in a 
 
 ## network question
 
-1. What is meant by the term statistical multiplexing?
+### 1. What is meant by the term statistical multiplexing?
 
-    ~~ThinkingYet~~
+~~ThinkingYet~~
 
-    ***
+### 2. Consider two hosts, A and B, connected by a single link of rate R bps. Suppose that the two hosts are separated by m meters, and suppose the propagation speed along the link is s meters/sec. Host A is to send a packet of size L bits to Host B.
 
-2. Consider two hosts, A and B, connected by a single link of rate R bps. Suppose that the two
-hosts are separated by m meters, and suppose the propagation speed along the link is s meters/sec.
-Host A is to send a packet of size L bits to Host B.
+#### a) Express the propagation delay, dprop in terms of m and s.
 
-   * a) Express the propagation delay, dprop in terms of m and s.
-
-    > the propagation delay is the time the transferring packet spend on the physical distance. In this question, the propagation delay is the distance between A and B divided by the propagation which is
-    >
-    > $$ dprop \ = \ m \ / \ s $$
+> the propagation delay is the time the transferring packet spend on the physical distance. In this question, the propagation delay is the distance between A and B divided by the propagation which is
+>
+> $$ dprop \ = \ m \ / \ s $$
 
     ***
 
