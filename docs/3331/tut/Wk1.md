@@ -147,7 +147,7 @@ packets of L= 40 +S bits. Each link has a transmission rate of R bps. Find the v
 minimizes the delay of moving the file from Host to Host B. Disregard propagation delay.*
 
 ```diff
-+ green omg 
+! orange this is orange
 ```
 
 ~~ThinkingYet~~
