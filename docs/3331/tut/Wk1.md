@@ -5,9 +5,13 @@
 1. If there are N students taking COMP 3331/9331, what is the probability that none of them has a
 birthday on the first day of the class? (Assume there are exactly 365 days in a year)
 
+    ~~NoSolutionYet~~
+
 ## network question
 
 1. What is meant by the term statistical multiplexing?
+
+    ~~ThinkingYet~~
 
     ***
 
@@ -73,7 +77,40 @@ but each user transmits only 10 percent of the time.
     >
     > $$ 1Mbps \ / \ 100kbps = 10 \ users$$
 
-~~this is out~~
+   * (b) Suppose packet switching is used for the rest of the problem. Find the probability that a given user is transmitting.
+
+    > Analyse: 
+    >
+    > * one user is transmitting, a specific user
+    >
+    > $$ denoted \ p = 0.10 $$
+    >
+    > * other users are not transmitting.
+    >
+    > $$ (1 \ - \ p)^{N \ - \ 1}$$
+    >
+    > final result:
+    >
+    > $$ p(1 \ - \ p)^{N \ - \ 1} $$
+
+    * (c) Suppose there are 40 users. Find the probability that at any given time, exactly n users are transmitting simultaneously(Note: You should simply express this as an expression rather than computing the exact probability value)
+
+    > Analyse:
+    >
+    > * exactly n users, specific or not?
+    >
+    > if specific
+    > $$ p^{n}(1 \ - \ p)^{N \ - \ n} $$
+    >
+    > if not specific, we need the help of random variable
+    > $$ P(X = n) \ * \ p^{n}(1 \ - \ p)^{N \ - \ n} $$
+
+5. Suppose there is exactly one packet switch between a sending host and the receiving host.
+Assume that the transmission speed of the links between the sending host and the switch and the
+switch and the receiving host are R1 and R2 respectively. Assuming that the switch uses store-andforward packet switching, what is the total end-to-end delay to send a packet of length L? Ignore
+queuing, propagation and processing delays.
+
+~~this is done~~
 
 
 
