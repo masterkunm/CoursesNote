@@ -13,6 +13,8 @@ birthday on the first day of the class? (Assume there are exactly 365 days in a 
 
     ~~ThinkingYet~~
 
+## -
+
 2. *Consider two hosts, A and B, connected by a single link of rate R bps. Suppose that the two
 hosts are separated by m meters, and suppose the propagation speed along the link is s meters/sec.
 Host A is to send a packet of size L bits to Host B.*
@@ -59,13 +61,13 @@ Host A is to send a packet of size L bits to Host B.*
     >
     > * it has been launched or transferred by the next switch/router.
 
-    ***
+## -
 
 3. *It takes a single bit ten times longer to propagate over a 10Mb/s link than over a 100Mb/s link. True or False?*
 
     > False, 10Mb/s and 100Mb/s is the transmisstion rate;
 
-    ***
+## -
 
 4. *Suppose users share a 1Mbps link. Also suppose each user requires 100 kbps when transmitting,
 but each user transmits only 10 percent of the time.*
@@ -94,8 +96,6 @@ but each user transmits only 10 percent of the time.*
     >
     > $$ p(1 \ - \ p)^{N \ - \ 1} $$
 
-    ***
-
     * (c) *Suppose there are 40 users. Find the probability that at any given time, exactly n users are transmitting simultaneously(Note: You should simply express this as an expression rather than computing the exact probability value)*
 
     > Analyse:
@@ -108,9 +108,9 @@ but each user transmits only 10 percent of the time.*
     > if not specific, we need the help of random variable
     > $$ P(X = n) \ * \ p^{n}(1 \ - \ p)^{N \ - \ n} $$
 
-    ***
+ ## -
 
-5. *Suppose there is exactly one packet switch between a sending host and the receiving host.
+1. *Suppose there is exactly one packet switch between a sending host and the receiving host.
 Assume that the transmission speed of the links between the sending host and the switch and the
 switch and the receiving host are R1 and R2 respectively. Assuming that the switch uses store-andforward packet switching, what is the total end-to-end delay to send a packet of length L? Ignore
 queuing, propagation and processing delays.*
@@ -118,7 +118,7 @@ queuing, propagation and processing delays.*
     > store and forward switching needs to receive the whole packet so that the switch can forward it to the next location
     > $$ dEndToEnd \ = \ L \ / \ R_1 \ + \ L \ / \ R_2  $$
 
-    ***
+## -
 
 6. *Review the car-caravan analogy in Section 1.4 of the textbook. Assume a propagation speed of
 100 km/hr.*
@@ -144,9 +144,7 @@ stretchable. I will let you think about it.*
 router) between A and B, and the links are uncongested (that is, no queuing delays). Host A
 segments the file into segments of S bits each and adds 40 bits of header to each segment, forming
 packets of L= 40 +S bits. Each link has a transmission rate of R bps. Find the value of S that
-minimizes the delay of moving the file from Host to Host B. Disregard propagation delay.*
-
-## 
+minimizes the delay of moving the file from Host to Host B. Disregard propagation delay.* 
 
 ```diff
 ! orange this is orange
