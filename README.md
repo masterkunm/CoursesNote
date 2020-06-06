@@ -37,7 +37,7 @@
 
 - [ ] COMP3331 tut1 left part
 - [ ] gdb
-- [ ] 自由安排3331 asst 3121 asst 或者Java
+- [x] 自由安排3331 asst 3121 asst 或者Java
 
 ## 04/06/2020
 
