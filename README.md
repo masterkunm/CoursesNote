@@ -5,7 +5,7 @@
 ### Morni
 
 - [ ] 起的早就10分钟英语听写
-- [ ] COMP3121 lec preview and lec
+- [x] COMP3121 lec preview and lec
 - [ ] COMP3231 lec
 - [ ] Java array
 
