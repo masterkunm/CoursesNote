@@ -1,5 +1,23 @@
 # CoursesNote
 
+## 0706/2020
+
+### Morni
+
+- [ ] COMP3231 lec review
+- [ ] COMP3121 asst1
+
+### Arvo
+
+- [ ] 刷算法
+- [ ] Java 类和对象 接口和继承
+- [ ] 3121 asst1
+
+### Night
+
+- [ ] 3121 asst1
+- [ ] Java网络编程
+
 ## 06/06/2020
 
 ### Morni
