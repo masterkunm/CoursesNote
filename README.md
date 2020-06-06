@@ -11,7 +11,7 @@
 
 ### Arvo
 
-- [ ] COMP3121 asst1
+- [x] COMP3121 asst1
 - [ ] 刷算法
 - [ ] Java 类和对象 接口和继承
 
