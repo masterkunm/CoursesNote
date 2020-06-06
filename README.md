@@ -1,5 +1,26 @@
 # CoursesNote
 
+## 06/06/2020
+
+### Morni
+
+- [ ] 起的早就10分钟英语听写
+- [ ] COMP3121 lec preview and lec
+- [ ] COMP3231 lec
+- [ ] Java array
+
+### Arvo
+
+- [ ] COMP3121 asst1
+- [ ] 刷算法
+- [ ] Java 类和对象 接口和继承
+
+### Night
+
+- [ ] COMP3331 tut1 left part
+- [ ] gdb
+- [ ] 自由安排3331 asst 3121 asst 或者Java
+
 ## 04/06/2020
 
 ### Morni
@@ -10,5 +31,5 @@
 
 ### Night
 
-- [ ] COMP3121 algorithm week1 homework till question10
-- [ ] COMP3121 check on asst1
+- [x] COMP3121 algorithm week1 homework till question10
+- [x] COMP3121 check on asst1
