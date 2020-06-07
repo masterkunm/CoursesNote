@@ -5,13 +5,13 @@
 ### Morni
 
 - [ ] COMP3231 lec review
-- [ ] COMP3121 asst1
+- [x] COMP3121 asst1
 
 ### Arvo
 
 - [ ] 刷算法
 - [ ] Java 类和对象 接口和继承
-- [ ] 3121 asst1
+- [x] 3121 asst1
 
 ### Night
 
