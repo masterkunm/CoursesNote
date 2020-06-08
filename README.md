@@ -1,6 +1,22 @@
 # CoursesNote
 
-## 0706/2020
+## 08/06/2020
+
+### Morni
+
+- [x] COMP3121 lec preview
+
+### Arvo
+
+- [x] COMP3121 lec preview
+- [ ] COMP3121 asst1
+
+### Night
+
+- [ ] COMP3331 lab
+- [ ] Java
+
+## 07/06/2020
 
 ### Morni
 
