@@ -88,6 +88,16 @@ rate (bits/time unit) at which bits transferred between sender/receiver.
 
 ## protocol layer, service model
 
+Three design step:
+
+* break down the problem into tasks
+
+* organize these task
+
+* decide who does what
+
+~~next~~
+
 1. prepare data. (application layer)
 
 2. ensure the packet reach the dest process. (transport layer)
