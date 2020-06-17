@@ -18,6 +18,8 @@
 
 ### Q4 Here are code samples for two threads that use semaphores (count initialized to 1). Give a sequence of execution and context switches in which these two threads can deadlock. Propose a change to one or both of them that makes deadlock impossible. What general principle do the original threads violate that causes them to deadlock
 
+> change the order in me() of requiring 
+
 ```cpp
 semaphore *mutex, *data;
 
