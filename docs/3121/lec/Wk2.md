@@ -1,13 +1,15 @@
-# Wk2 Lec recurrence
+# Wk2 Lecture recurrence
 
 ## Big Oh notation
 
 f(n) = O(g(n)) -> there exist positive constant c and $n_0$ that $0 \leq f(n) \leq cg(n) \ for \ all \ n \geq n_0$
 
-g(n) is aysmptotic upper bound for f(n).
+g(n) is asymptotic upper bound for f(n).
 
 $f(n) = O(g(n))$ means that $f(n)$ does not grow substantially faster
 than $g(n)$ because a multiple of $g(n)$ eventually dominates $f(n)$.
+
+constants c of interest is greater than 1 (enlarge g(n)).
 
 ## Omega notation
 
@@ -37,9 +39,9 @@ $$
 
 * no need the exact solution
 
-* only need to find the growth rate (aysmptotic behaviour)
+* only need to find the growth rate (asymptotic behavior)
 
-* the (appro) size of the constants involved
+* the (approximately) size of the constants involved
 
 This is what the master theorem provided.
 
@@ -47,7 +49,7 @@ This is what the master theorem provided.
 
 let
 
-* a ≥ 1 be an integer and and b > 1 a real;
+* a ≥ 1 be an integer and and b > 1 an integer;
 
 * f(n) > 0 be a non-decreasing function;
 
@@ -102,5 +104,9 @@ So whenever we have $f = \Theta(g(n) log n)$ we do not have to specify what base
 
 #### example
 
+let T(n) = 4T(n/2) + n;
+
 #### proof
+
+------------------
 
