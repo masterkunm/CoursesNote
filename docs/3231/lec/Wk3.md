@@ -45,6 +45,3 @@ the processor control registers are located in CP0
 * translation management registers
 
 * CP0 is manipulated using mtc0 (move to) and mfc0 (move from) instruction. (these two only can access in kernel mode)
-
-
-![image](../../../img/3231/Screen%20Shot%202020-06-17%20at%203.09.34%20pm.png)

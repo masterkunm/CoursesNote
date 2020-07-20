@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Midterm Summary</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="midterm-summary">Midterm Summary</h1>
+<ul>
+<li>
+<p>multiplexing: encapsulate data from sockets with header to become segments in the end system, then transfer to network layer.</p>
+<ul>
+<li>Every socket has only one identifier.</li>
+<li>header includes source port number field, destination port number field (UDP and TCP includes other header information).</li>
+</ul>
+</li>
+<li>
+<p>demultiplexing: deliver data from segments to the correct socket.</p>
+</li>
+<li>
+<p><strong>UDP</strong></p>
+<ul>
+<li>
+<p>UDP socket is full identified by dual (二元组全面标识)(include destination IP address and destination port number)(doesn't mean that the transferred segment doesn't have source info, this is UDP socket)</p>
+</li>
+<li>
+<p>UDP data with same dest port and IP will deliver to the same socket then the same process.</p>
+</li>
+<li>
+<p>no connection between source and destination</p>
+</li>
+<li>
+<p>chrome QUIC protocol uses UDP on top of the reliable transfer.</p>
+</li>
+<li>
+<p>UDP checksum -&gt; apply 1's complement to all 16 bits word's sum, any overflow will rewind. On receiver, add checksum with all 16 bits word's sum, if we get all 1s -&gt; correct, otherwise, corrupted happens.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>TCP</strong></p>
+<ul>
+<li>
+<p>TCP socket is identified by quad (四元组标识)(include source IP, source port number, dest IP, dest port number).</p>
+</li>
+<li>
+<p>TCP data with same dest port and IP but different source IP or port will be delivered to different sockets (except for connection request).</p>
+</li>
+<li>
+<p>persistent HTTP: one TCP connection, use the same socket exchange message and data.</p>
+</li>
+<li>
+<p>non-persistent HTTP: every exchange need to create a new connection and socket.</p>
+</li>
+<li>
+<p>send/receive buffer (set up during three-way handshake)</p>
+</li>
+<li>
+<p>MSS (Maximum segment size) (according to Maximum transmission unit (MTU))</p>
+</li>
+<li>
+<p><strong>In TCP segment header field, the ACKNO is always the received sequence Number plus 1 (accumulative acknowledgement)</strong></p>
+</li>
+<li>
+<p><strong>the sequence number is the first byte # of this TCP segment</strong></p>
+</li>
+<li>
+<p><strong>TCP flags:</strong></p>
+<ul>
+<li>ACK -&gt; acknowledgement</li>
+<li>RST, SYN, FIN -&gt; connect/close</li>
+<li>CWR, ECE -&gt; congestion control</li>
+<li>PSH -&gt; receiver hands over data to upper layer immediately</li>
+<li>URG -&gt; urgent</li>
+</ul>
+</li>
+<li>
+<p>mistakes assembly</p>
+<ul>
+<li>
+<p><strong>a traditional HTTP/TCP web serve, all of the sockets at the server have the same server-side port number.</strong></p>
+</li>
+<li>
+<p><strong>the highest sequence number up to is related to ACK number.</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>reliable data transfer</em></p>
+<ul>
+<li>
+<p>rdt 1.0 sender: wait for invocation -&gt; rdt_send(data) -&gt; packet=make_pkt(data), udt_send(packet) -&gt; wait for invocation.....</p>
+</li>
+<li>
+<p>rdt 1.0 receiver: wait for invocation from downside layer -&gt; rdt_rcv(packet) -&gt; extract(packet, data), deliver_data(data) -&gt; wait for.....</p>
+</li>
+<li>
+<p>rdt 2.0 bit-error rdt</p>
+<ul>
+<li>
+<p>automatic repeat request(ARQ) -&gt; positive acknowledgment, negative acknowledgment</p>
+</li>
+<li>
+<p>detect error (checksum)</p>
+</li>
+<li>
+<p>(1, ACK), (0, NAK)</p>
+</li>
+<li>
+<p>retransfer(if not rcv)</p>
+</li>
+<li>
+<p>stop and wait (sender waits for ACK and NAK, can't do more until get reply)</p>
+</li>
+<li>
+<p><strong>However, there is a fatal error, we can't sure whether the ACK and NAK is corrupted or not</strong>, to solve this, we add a sequence number to segment. If sender/receiver accept the message as last one(same sequence number) then we know receiver/sender don't get the last message. (rdt 2.1)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>rdt 2.2: no NAK, just (0, ACK), (1, ACK). this can also handle duplicate data packet</p>
+</li>
+<li>
+<p>rdt 3.0: set up a timeout to wait for ACK (countdown timer), also called alternating-bit protocol</p>
+</li>
+<li>
+<p>mistakes assembly</p>
+<ul>
+<li>
+<p><strong>packet corruption -&gt; checksums, ACKs, sequence numbers</strong></p>
+</li>
+<li>
+<p><strong>packet corruption and loss -&gt; Checksums, ACKs, timeouts, sequence numbers</strong></p>
+</li>
+<li>
+<p><strong>If packets (and ACKs and NACKs) could be lost in RDT 2.1 (or 2.2), the protocol will get stuck</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>pipelining</p>
+<ul>
+<li>improve efficient</li>
+<li>handle pipelining error
+<ul>
+<li>go-back-N
+<ul>
+<li>unidentified packet can't over N</li>
+<li>if window not full, then send, otherwise wait</li>
+<li>cumulative acknowledgement</li>
+<li>resend from the timeout packet</li>
+</ul>
+</li>
+<li>selective repeat</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>DNS</p>
+<ul>
+<li>
+<p>DNS server usually runs BIND(Berkeley internet name domain) on top of unix.</p>
+</li>
+<li>
+<p>UDP, port 53</p>
+</li>
+<li>
+<p>mistakes assembly</p>
+<ul>
+<li><strong>A web browser needs to contact <a href="http://www.cse.unsw.edu.au">www.cse.unsw.edu.au</a>. The minimum number of DNS requests sent is: 0.</strong> (local DNS cache)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>P2P</p>
+<ul>
+<li>mistakes assembly
+<ul>
+<li><strong>BitTorrent uses tit-for-tat in each round to Determine to which peers to upload chunks</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>HTTP</p>
+<ul>
+<li>
+<p>non-persistent</p>
+<ul>
+<li>each TCP transfer once</li>
+</ul>
+</li>
+<li>
+<p>persistent</p>
+<ul>
+<li>one TCP connection transfer multiple messages</li>
+<li>HTTP 1.1</li>
+<li>HTTP 2.0</li>
+</ul>
+</li>
+<li>
+<p>HTTP request</p>
+<ul>
+<li>request line</li>
+<li>header line
+<ul>
+<li>GET</li>
+<li>POST
+<ul>
+<li>entity body -&gt; input number</li>
+</ul>
+</li>
+<li>HEAD</li>
+<li>PUT</li>
+<li>DELETE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>HTTP response</p>
+<ul>
+<li>status line
+<ul>
+<li>200 OK</li>
+<li>301 Moved Permanently</li>
+<li>304 Not modified</li>
+<li>400 bad request</li>
+<li>404 not found</li>
+<li>505 HTTP Version not supported</li>
+</ul>
+</li>
+<li>header line</li>
+<li>entity body</li>
+</ul>
+</li>
+<li>
+<p>stateless protocol</p>
+<ul>
+<li>cookie
+<ul>
+<li>in http response message header line</li>
+<li>in http request message header line</li>
+<li>client browser</li>
+<li>Web server database</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Web cache/proxy server</p>
+<ul>
+<li>a copy of the request object (last modified time)</li>
+<li>send request with last modified time (if copy exist)</li>
+</ul>
+</li>
+<li>
+<p>Email</p>
+<ul>
+<li>User agent</li>
+<li>mail server</li>
+<li>SMTP (simple mail transfer protocol)</li>
+<li>SMTP applies to between mail server</li>
+<li>user agent uses POP3(post office protocol version3), IMAP(internet mail access protocol) or HTTP to get mail from mail server</li>
+</ul>
+</li>
+</ul>
+
+    </body>
+    </html>
